@@ -59,3 +59,26 @@ window.addEventListener("copy",handleWindowCopy);
 window.addEventListener("offline",handleWindowOffline);
 window.addEventListener("online",handleWindowOnline);
 ```
+
+<b>6. clock기능 정리</b>   
+1. setInterval과 setTimeout의 차이점   
+    - setInterval(실행함수명, 반복ms) : 처음 실행도 반복하는 초가 지나야 반복함   
+    - setTimeout(실행할함수명, 반복ms) : 반복ms 시간이 흐른 뒤 한번만 실행됨   
+   
+2. 간단한 date함수 구현    
+```js
+const date = new Date();
+date.getDay();
+date.getFullYear();
+date.getHours();
+```
+    - 위와 같이 작성하면 결과는 01:11:1 형식으로 seconds는 한자리수만 출력된다.   
+      이것을 해결하기 위해서는 ... padStart를 사용하면 된다.   
+```js
+padStart(2, "0") // 길이는 2, 그렇지않으면 첫자리를 0으로 자리수를 채우기 글고 sting임!
+padEnd(2,"0") // 길이는 2, 그렇지않으면 끝자리를 0으로 자리수를 채우기 글고sting임!
+```
+    - 변경시, hours은 number이다. text로 변환해서 padStart처리를 하려면 어떻게 해야 하나?
+      String으로 감싸면된다.
+
+<b>7. 명언넣기</b>   
