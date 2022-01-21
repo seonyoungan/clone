@@ -50,7 +50,7 @@ function paintGreeting(username){
 
 loginForm.addEventListener("submit", onLoginSubmit); //onLoginSubmit();에서, ();는 즉시실행한단 뜻이기 때문에, 사용되지 않는 것임.
 //모든 EventListener function의 첫번째 argument는 항상 지금 막 벌어진 일들의 정보가 된다. (js가 무료로 그것을 제공한다.)
-link.addEventListener("click", handleLinkClick);
+//link.addEventListener("click", handleLinkClick);
 
 //saving (localStorage를 이용)
 const savedUsername = localStorage.getItem(USERNAME_KEY); //유저정보가 localStorage에 없을경우 local storage는 null반환
