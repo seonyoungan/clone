@@ -44,7 +44,7 @@ function handleLinkClick(event){ //information about the event that just happend
 }
 
 function paintGreeting(username){
-    greeting.innerText = `🥱 hello ${username}` //username을 기억하고 있는지 test해보았다.
+    greeting.innerText = ` hello, ${username}` //username을 기억하고 있는지 test해보았다.
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

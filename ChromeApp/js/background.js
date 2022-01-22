@@ -8,4 +8,4 @@ bgImage.src = `img/${chosenImage}`;
 console.log(bgImage);
 
 //body에 접근
-document.body.appendChild(bgImage);
+document.body.prepend(bgImage);

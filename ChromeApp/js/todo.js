@@ -5,7 +5,16 @@ const toDoList = document.getElementById("todo-list");
 function deleteToDo(event){
     //지금 우리가 삭제해야할 것은 li니까 event.target.parentElement까지 가야하는 것이다.
     const li = event.target.parentElement; //target : element의 속성, parentElemnent : 이걸 해야 누구를 삭제해야하는지 알 수 있게 되는거지
-    li.remove(); //(html(=보여지는부분)에서 삭제! db는 따로 삭제해야함)
+    
+    //html(=보여지는부분)에서 삭제! 
+    li.remove(); 
+
+    //db에서 삭제 
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    /*todo : toDos DB에 있는 요소 중 하나.
+    toDo.id가 li.id가 아닌것들로 필터링하기
+    */
+    saveToDos();
 }
 
 //localstorage에 저장해보기
@@ -20,6 +29,8 @@ JSON.stringify(toDos) : text형태로 저장할 수 있나봐
 
 function paintToDo(newTodo){
     const li = document.createElement("li"); //변수명은 상관없으나 createElement("li")는 꼭 이렇게 써야댄당
+    li.id = newTodo.id;
+
     const span = document.createElement("span"); //span 기능 가져오깅
     span.innerText = newTodo.text;
     const button = document.createElement("button") //버튼 기능 가져오깅 (event와 수신하게끔)
@@ -69,3 +80,4 @@ if(savedToDos !== null){
     //array 내에 있는 item들을 각각 다르게 활용(function)하고 싶을 경우 어떻게 해야할까?
     parsedToDos.forEach(paintToDo);
 }
+

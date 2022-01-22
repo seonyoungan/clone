@@ -64,7 +64,7 @@ window.addEventListener("online",handleWindowOnline);
 1. setInterval과 setTimeout의 차이점   
     - setInterval(실행함수명, 반복ms) : 처음 실행도 반복하는 초가 지나야 반복함   
     - setTimeout(실행할함수명, 반복ms) : 반복ms 시간이 흐른 뒤 한번만 실행됨   
-   
+ 
 2. 간단한 date함수 구현    
 ```js
 const date = new Date();
@@ -73,12 +73,32 @@ date.getFullYear();
 date.getHours();
 ```
     - 위와 같이 작성하면 결과는 01:11:1 형식으로 seconds는 한자리수만 출력된다.   
-      이것을 해결하기 위해서는 ... padStart를 사용하면 된다.   
+     해결하기 위해서는 ... padStart를 사용하면 된다.    
+   
+   
 ```js
 padStart(2, "0") // 길이는 2, 그렇지않으면 첫자리를 0으로 자리수를 채우기 글고 sting임!
 padEnd(2,"0") // 길이는 2, 그렇지않으면 끝자리를 0으로 자리수를 채우기 글고sting임!
 ```
-    - 변경시, hours은 number이다. text로 변환해서 padStart처리를 하려면 어떻게 해야 하나?
-      String으로 감싸면된다.
 
-<b>7. 명언넣기</b>   
+   
+    - 변경시, hours은 number이다. text로 변환해서 padStart처리를 하려면 어떻게 해야 하나?   
+      String으로 감싸면된다.   
+
+<b>7. 명언 넣기</b>   
+
+<b>8. todo-list</b>   
+
+    - fillter기능 사용하기   
+```js
+const arr = [123,456,789,1111,22,23345,6166];
+function saynum(num) { return num <= 1000}
+arr.filter(saynum);
+```
+
+<b>9.weather</b>   
+1. 나의 위치를 찾는 navigator사용   
+   
+```js
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
