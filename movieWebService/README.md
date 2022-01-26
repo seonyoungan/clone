@@ -15,3 +15,10 @@
 -  vanilaJs와 reactJs의 차이점
     - vanilaJs : html 먼저 만들고, js에서 조작
     - reactJS : js 먼저 시작하고, html이 만들어짐
+
+
+```jsx
+const containter = React.createElement("div", null, [span, btn]);
+        ReactDOM.render(containter, root);
+// container라는 변수 내에 div가 render되어있고, 그 안에 span과 btn이 있음. 
+```
