@@ -9,17 +9,19 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root");
-        
         function App(){
-            const [counter, modifier] = React.useState(0); // [초기값, 그 값을 바꾸는 함수] 배열 제공
-
+            const [counter, setCounter] = React.useState(0); // [초기값, 그 값을 바꾸는 함수] 배열 제공
+            const onClick =()=>{
+                setCounter(current => current+1);  //setCounter가 뭘 리턴하던지 새 state가 생성됨 (안전한 방법인편)
+            };
             return (
                 <div>
-                    <h3>Total clicks {counter}</h3>
-                    <button>Click me</button>    
+                    <h3>Total clicks: {counter}</h3>
+                    <button onClick={onClick}>Click me</button>    
                 </div>
             );
         }
         ReactDOM.render(<App />, root);
+        
     </script>
 </html>
